@@ -19,7 +19,7 @@ def activate():
             "dpady": 0, 
             "dpadx": 0})
 
-def move_forward(time):
+def move_forward(times):
     drive_pub.send({"L1": 1, "ly": 1, })
     time.sleep(time)
     activate()
@@ -36,8 +36,8 @@ def turn_right():
 
 if __name__ == "__main__":
     activate()
-    move_forward(time=5)
+    move_forward(times=5)
     turn_left()
-    move_forward(time=3)
+    move_forward(times=3)
     turn_right()
-    move_forward(time=3)
+    move_forward(times=3)
