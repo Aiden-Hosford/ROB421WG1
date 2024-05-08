@@ -21,7 +21,7 @@ def activate():
 
 def move_forward(times):
     drive_pub.send({"L1": 1, "ly": 1, })
-    time.sleep(time)
+    time.sleep(times)
     activate()
 
 def turn_left():
