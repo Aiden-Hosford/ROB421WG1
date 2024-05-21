@@ -14,4 +14,4 @@ class Display:
 
 if __name__ == "__main__":
     disp = Display()
-    disp.show_image('to_the_moon.jpeg')
+    disp.show_image('cropped.jpg')
