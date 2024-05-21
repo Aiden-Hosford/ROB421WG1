@@ -1,6 +1,16 @@
 from UDPComms import Publisher
 import time 
 
+# from MangDang.mini_pupper.HardwareInterface import HardwareInterface
+# hardware_interface = HardwareInterface()
+# # 0 is hip, 1 is thigh, 2 is calf
+# #leg index is 0 through 3
+# #-45 to 45 for hips, thigs 0 to 90, calfs 0 to -90
+# hardware_interface.set_actuator_position
+# from MangDang.mini_pupper.display import Display
+# disp = Display()
+# Display.show_image()
+
 drive_pub = Publisher(8830)
 
 def activate():
