@@ -10,6 +10,7 @@ output_folder_path = 'Toothless_Frames'
 #Frame extraction command
 #ffmpeg -i Toothless_Dancing_Video.mp4 -vf scale=240:240 frame_%04d.png
 #ffmpeg -i Toothless_Dancing_Video.mp4 frame_%04d.png
+#ffmpeg -i Toothless_Dancing_Video.mp4 -vf scale=320:240 frame_%04d.png
 
 # Main function
 def main(output_folder):
