@@ -16,7 +16,7 @@ if __name__ == "__main__":
         while True:
             currenttime = time.monotonic()
             draw = ImageDraw.Draw(im)
-            draw.text(xy=(140, 100), align="center", font=font, text=f"{currenttime-starttime:.2f}")
+            draw.text(xy=(110, 100), align="center", font=font, text=f"{currenttime-starttime:.2f}")
 
             # write to stdout
             disp.display(im)
