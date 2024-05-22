@@ -8,8 +8,6 @@ disp = Display()
 output_folder_path = 'Toothless_Frames'
 
 #Frame extraction command
-#ffmpeg -i Toothless_Dancing_Video.mp4 -vf scale=240:240 frame_%04d.png
-#ffmpeg -i Toothless_Dancing_Video.mp4 frame_%04d.png
 #ffmpeg -i Toothless_Dancing_Video.mp4 -vf scale=320:240 frame_%04d.png
 
 # Main function
@@ -21,7 +19,7 @@ def main(output_folder):
     for frame in frames:
         frame_path = os.path.join(output_folder, frame)
         disp.show_image(frame_path)
-        time.sleep(0.033)  # Display each frame for ~33ms (30fps)
+        time.sleep(0.0165)  # Display each frame for ~33ms (30fps)
 
 if __name__ == '__main__':
     main(output_folder_path)
