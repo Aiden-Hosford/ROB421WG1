@@ -1,4 +1,41 @@
+import cv2
+from MangDang.LCD.ST7789 import ST7789
 import time
+from PIL import Image, ImageDraw
+
+
+ 
+
+def show_image(self, image):
+    image = Image.fromarray(image)
+    image = image.resize((320, 240))
+    self.disp.display(image)
+
+def show_video(self, video_path):
+    cap = cv2.VideoCapture(video_path)
+    while(cap.isOpened()):
+        ret, frame = cap.read()
+        if ret:
+            self.show_image(frame)
+        else:
+            break
+    cap.release()
 
 if __name__ == "__main__":
+    disp = ST7789()
+    disp.begin()
+    starttime = time.monotonic()
+    currenttime = time.monotonic()
+    with Image.new("RGB", size=(320, 240)) as im:
+        # while True:
+
+        draw = ImageDraw.Draw(im)
+        draw.text(xy=(160, 120), align="center", text=f"{currenttime-starttime:.2f}")
+
+        # write to stdout
+
+        im.paste((0,0,0), (0,0,320,240))
+        time.sleep(0.05 - ((time.monotonic() - starttime) % 0.05))
+        disp.display(im)
     
+
