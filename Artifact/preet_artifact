@@ -4,20 +4,8 @@ import time
 from PIL import Image, ImageDraw
 
 
-def show_image(self, image):
-    image = Image.fromarray(image)
-    image = image.resize((320, 240))
-    self.disp.display(image)
 
-def show_video(self, video_path):
-    cap = cv2.VideoCapture(video_path)
-    while(cap.isOpened()):
-        ret, frame = cap.read()
-        if ret:
-            self.show_image(frame)
-        else:
-            break
-    cap.release()
+
 
 if __name__ == "__main__":
     disp = ST7789()
@@ -31,9 +19,10 @@ if __name__ == "__main__":
         draw.text(xy=(160, 120), align="center", text=f"{currenttime-starttime:.2f}")
 
         # write to stdout
-
-        im.paste((0,0,0), (0,0,320,240))
-        time.sleep(0.05 - ((time.monotonic() - starttime) % 0.05))
         disp.display(im)
+        # im.paste((0,0,0), (0,0,320,240))
+        print("test")
+        time.sleep(0.05 - ((time.monotonic() - starttime) % 0.05))
+
     
 
