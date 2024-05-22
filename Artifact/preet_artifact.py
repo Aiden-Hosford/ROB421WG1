@@ -10,7 +10,7 @@ if __name__ == "__main__":
     disp = ST7789()
     disp.begin()
     starttime = time.monotonic()
-    font = ImageFont.load_default(size=20)
+    font = ImageFont.truetype("sans-serif.ttf", 16)
 
     with Image.new("RGB", size=(320, 240)) as im:
         while True:
