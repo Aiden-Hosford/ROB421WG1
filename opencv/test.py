@@ -7,7 +7,7 @@ import math
 hog = cv2.HOGDescriptor()
 hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
   
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(10)
   
 while cap.isOpened():
     # Reading the video stream
